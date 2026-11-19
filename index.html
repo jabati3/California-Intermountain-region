@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="A geographic and cultural journey across California's Intermountain region."
+  />
+  <title>The California Intermountain Region</title>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f9f7f2;
+      --surface: #fff;
+      --ink: #1f2421;
+      --muted: #59635e;
+      --accent: #2d5a43;
+      --border: #e2ddd2;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --serif: Georgia, "Times New Roman", serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5rem;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--serif);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .site-header, main {
+      width: min(100% - 3rem, 820px);
+      margin-inline: auto;
+    }
+
+    .site-header { padding: 4.5rem 0 2rem; }
+
+    .eyebrow, .section-label, .site-nav, figcaption, footer {
+      font-family: var(--sans);
+    }
+
+    .eyebrow, .section-label {
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow { margin: 0 0 0.75rem; }
+
+    h1 {
+      margin: 0 0 1rem;
+      color: #141816;
+      font-size: clamp(2.2rem, 7vw, 3.5rem);
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      max-width: 650px;
+      margin: 0;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .site-nav {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-block: 1px solid var(--border);
+      background: rgb(249 247 242 / 94%);
+      backdrop-filter: blur(12px);
+    }
+
+    .site-nav ul {
+      display: flex;
+      width: min(100% - 3rem, 820px);
+      gap: 1.25rem;
+      margin: 0 auto;
+      padding: 0.85rem 0;
+      overflow-x: auto;
+      list-style: none;
+      white-space: nowrap;
+    }
+
+    .site-nav a {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .site-nav a:hover, .site-nav a:focus-visible {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 0.25em;
+    }
+
+    main { padding: 0 0 4rem; }
+
+    section {
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-child { border-bottom: 0; }
+
+    .section-label {
+      display: block;
+      margin-bottom: 1.15rem;
+    }
+
+    p {
+      margin: 0 0 1.4rem;
+      font-size: 1.1rem;
+    }
+
+    figure {
+      margin: 2rem 0;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: 0 5px 22px rgb(0 0 0 / 5%);
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      max-height: 460px;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #e8e5dc;
+    }
+
+    figcaption {
+      padding: 0.8rem 1rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.83rem;
+      line-height: 1.5;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.1rem;
+      margin: 2rem 0;
+    }
+
+    .photo-grid figure { margin: 0; }
+
+    .photo-grid figure img {
+      height: 240px;
+      aspect-ratio: auto;
+    }
+
+    footer {
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: inherit;
+    }
+
+    @media (max-width: 600px) {
+      .site-header, main { width: min(100% - 2rem, 820px); }
+      .site-header { padding-top: 3rem; }
+      .site-nav ul { width: calc(100% - 2rem); }
+      .photo-grid { grid-template-columns: 1fr; }
+      .photo-grid figure img { height: 230px; }
+      p { font-size: 1.05rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <p class="eyebrow">Geographic &amp; Cultural Documentary</p>
+    <h1>The California Intermountain Region</h1>
+    <p class="subtitle">
+      From Pacific ocean mist and towering coastal redwoods, across the granite
+      spine of the Sierra Nevada, to the sagebrush flats of the Great Basin.
+    </p>
+  </header>
+
+  <nav class="site-nav" aria-label="On this page">
+    <ul>
+      <li><a href="#coast">Coast</a></li>
+      <li><a href="#mountains">Mountains</a></li>
+      <li><a href="#western-slope">Western Slope</a></li>
+      <li><a href="#great-basin">Great Basin</a></li>
+      <li><a href="#railroad">Railroad</a></li>
+      <li><a href="#water">Water &amp; Today</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="coast">
+      <span class="section-label">I. Coast &amp; Coastal Forests</span>
+      <p>Waves crash against rugged cliffs as mist rises off the cold ocean water. The camera pulls back slowly, climbing higher into the morning sky, revealing dense coastal forests of towering redwoods stretching inland.</p>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Pacific waves breaking along a rugged coast" loading="lazy" />
+        <figcaption>Cold Pacific waters meet rugged coastal cliffs where marine mist feeds inland forests.</figcaption>
+      </figure>
+      <p>To understand the American West, you have to look at the land between the barriers. The camera sweeps over jagged granite peaks dusted with snow, where sunlight glints off alpine lakes and rushing rivers carve deep valleys through the rock.</p>
+    </section>
+
+    <section id="mountains">
+      <span class="section-label">II. The Mountain Barrier &amp; Rain Shadow</span>
+      <p>This is the California Intermountain region, a vast geographic and cultural bridge stretching from the mild shores of the Pacific Ocean, across the towering walls of the Cascade and Sierra Nevada ranges, and out into the high, arid expanse of the Great Basin.</p>
+      <div class="photo-grid">
+        <figure>
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Snow-covered mountain peaks beneath a clear sky" loading="lazy" />
+          <figcaption>Jagged granite peaks and alpine basins along the Sierra Nevada crest.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=900&amp;q=85" alt="Arid open landscape beneath a wide sky" loading="lazy" />
+          <figcaption>Sagebrush country and dry basins stretch east of the mountains.</figcaption>
+        </figure>
+      </div>
+      <p>The green forests give way to the rain shadow, where flats of sagebrush, salt pans, and distant basin-and-range mountains shimmer under a wide, cloudless sky. Few places pack so many extremes into a single corridor. Within a few hundred miles, coastal forests give way to alpine tundra, and alpine tundra drops into some of the driest desert valleys in North America.</p>
+    </section>
+
+    <section id="western-slope">
+      <span class="section-label">III. Abundance on the Western Slope</span>
+      <p>Sunlight filters through sprawling valley oaks as clusters of acorns hang heavy on the branches. For thousands of years, Indigenous nations have known and cared for this diverse landscape. Along the coast and in the fertile inland valleys, peoples including the Pomo, Miwok, and Maidu developed deep connections to their homelands.</p>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Sunlight filtering through a green forest" loading="lazy" />
+        <figcaption>Forests, rivers, and valleys support a rich variety of life and cultural traditions.</figcaption>
+      </figure>
+      <p>People harvested salmon from coastal rivers, gathered shellfish along the tides, and turned the autumn acorn harvest into a year-round staple through careful leaching and stone-boiling. Basketry traditions used local plants and materials, with designs and practices particular to each community.</p>
+    </section>
+
+    <section id="great-basin">
+      <span class="section-label">IV. Resilience in the Great Basin</span>
+      <p>East of the Sierra crest, the land opens into high plateaus and broad basins. Indigenous nations including the Shoshone, Paiute, Ute, Bannock, and Goshute have long lived throughout this region, adapting their lifeways to its climates, waters, and seasons.</p>
+      <p>Families traveled to gather pine nuts in the high hills during autumn, hunt game across the sagebrush flats, and visit lakes and marshes as conditions changed. Knowledge of plants, animals, water, and seasonal cycles made it possible to thrive in a landscape where resources could be widely dispersed.</p>
+    </section>
+
+    <section id="railroad">
+      <span class="section-label">V. Carving Through Granite</span>
+      <p>For centuries, the Sierra Nevada's rugged mountain walls made travel between the coast and the interior difficult. To nineteenth-century travelers, crossing the range could mean freezing temperatures, dangerous passes, and impassable snow.</p>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="A forested mountain landscape" loading="lazy" />
+        <figcaption>The Sierra Nevada posed formidable challenges to transportation and engineering.</figcaption>
+      </figure>
+      <p>In the 1860s, engineers and thousands of laborers, many of them Chinese immigrants, built the Central Pacific Railroad across the Sierra Nevada. They blasted tunnels through granite and constructed snow-protection structures along exposed stretches of track.</p>
+      <p>When the Central Pacific and Union Pacific railroads met in Utah in 1869, the transcontinental connection transformed travel and commerce. The route linked distant communities and reshaped the movement of people and goods across the West.</p>
+    </section>
+
+    <section id="water">
+      <span class="section-label">VI. Modern Infrastructure &amp; Water</span>
+      <p>Today, roads, railways, reservoirs, and power lines cross a landscape still defined by mountain ranges and dry basins. Water is one of the region's most important resources: snowpack in the high country feeds rivers that supply farms, towns, and cities across California and neighboring states.</p>
+      <p>Dams, canals, and aqueducts have changed how water moves through the region, supporting communities while also affecting rivers, wetlands, wildlife, and Indigenous homelands. Drought, wildfire, and a changing climate make decisions about water and land increasingly consequential.</p>
+      <p>The California Intermountain region is not simply a passage between places. It is a living landscape—shaped by its communities, its seasonal rhythms, and the ongoing relationship between people and the natural world.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>A geographic and cultural journey across California's Intermountain region.</p>
+  </footer>
+</body>
+</html>
